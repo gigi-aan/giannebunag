@@ -120,15 +120,7 @@ body {
 /* Responsive adjustments for minimized sidebar */
 @media (max-width: 768px) {
   .sidebar.minimized {
-    width: calc(100% - 20px); 
     align-items: flex-start;
-  }
-
-  .sidebar.minimized .nav-menu h3,
-  .sidebar.minimized .contact-info h3,
-  .sidebar.minimized .nav-menu span,
-  .sidebar.minimized .contact-item span {
-    display: block;
   }
 
   .nav-menu li,
@@ -137,7 +129,7 @@ body {
   }
 
   .main-content.sidebar-minimized {
-    margin-left: 0;
+    margin-left: 80px;
   }
 }
 
@@ -605,18 +597,8 @@ a {
     flex-direction: column;
   }
 
-  .sidebar {
-    width: calc(100% - 20px);
-    position: static;
-    min-height: auto;
-    padding: 10px 0;
-    margin-bottom: 70px; 
-  }
-
   .main-content {
-    margin-left: 0;
     margin-right: 0;
-    width: 100%;
   }
 
   .header {
