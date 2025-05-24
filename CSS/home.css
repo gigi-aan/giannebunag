@@ -37,7 +37,6 @@ body {
 }
 
 /* Sidebar Styles */
-/* Sidebar Styles */
 .sidebar {
   width: 180px; /* Original width */
   background-color: var(--light);
@@ -56,10 +55,35 @@ body {
   transition: width 0.3s ease, padding 0.3s ease;
 }
 
+.sidebar li[data-tooltip],
+.sidebar .contact-item[data-tooltip] {
+  position: relative;
+}
+
 .sidebar.minimized {
   width: 60px; 
   padding: 20px 0;
   align-items: center; 
+}
+
+.sidebar.minimized li[data-tooltip]:hover::after,
+.sidebar.minimized .contact-item[data-tooltip]:hover::after,
+.sidebar.minimized .sidebar-toggle[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--pink);
+  color: var(--dark);
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1300;
+} 
+
+.sidebar.minimized .sidebar-toggle[data-tooltip]:hover::after{
+  left: calc(100% + 5px);
 }
 
 .sidebar.minimized .nav-menu h3,
@@ -119,10 +143,6 @@ body {
 
 /* Responsive adjustments for minimized sidebar */
 @media (max-width: 768px) {
-  .sidebar.minimized {
-    align-items: flex-start;
-  }
-
   .nav-menu li,
   .contact-item {
     transition: all 0.3s ease;
@@ -444,8 +464,8 @@ a {
 }
 
 .btn:hover {
-  background-color: #dfd0b8;
-  color: #393e46;
+  background-color: var(--pink);
+  color: var(--dark);
 }
 
 /* Skills Styles */
@@ -602,10 +622,8 @@ a {
   }
 
   .header {
-    left: 10px;
     right: 10px;
     top: 10px;
-    width: calc(100% - 30px);
     padding: 10px 15px;
   }
 

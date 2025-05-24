@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Adjust header position based on sidebar state
       if (sidebar.classList.contains('minimized')) {
         header.style.left = '90px';
-        header.style.width = 'calc(100% - 110px)';
+        header.style.width = 'calc(100% - 105px)';
       } else {
         header.style.left = '220px';
         header.style.width = 'auto'; 
