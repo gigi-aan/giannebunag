@@ -1,5 +1,19 @@
 // Smooth scrolling for navigation
 document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    const viewMoreButton = card.querySelector(".view-more");
+
+    if (viewMoreButton) {
+      viewMoreButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        card.classList.toggle("expanded");
+      });
+    }
+  });
+
   const sidebarToggle = document.getElementById('sidebarToggle');
   const sidebar = document.querySelector('.sidebar');
   const mainContent = document.querySelector('.main-content');
